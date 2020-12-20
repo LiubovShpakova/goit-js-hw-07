@@ -36,15 +36,15 @@ function getRandomInt(max) {
 function createBoxes(amount) {
   const result = [];
   root.innerHTML = "";
-  if (amount > 0) {
-    for (let i = 0; i <= amount; i += 1) {
+
+  if (amount > 0 && amount <= 100) {
+    for (let i = 0; i < amount; i += 1) {
       const element = document.createElement("div");
       element.style.backgroundColor = `rgb(${getRandomInt(255)},${getRandomInt(
         255
       )},${getRandomInt(255)})`;
       element.style.width = i * 10 + 30 + "px";
       element.style.height = i * 10 + 30 + "px";
-
       result.push(element);
     }
     root.append(...result);
